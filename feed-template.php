@@ -42,8 +42,8 @@ while (have_posts()) {
   <?php
   foreach ($outline as $content):
   ?>
-  <outline type="outline" text="<?php echo $outline[0]['title']; ?>"/>
-  <outline type="outline" text="<?php echo $outline[0]['body']; ?>"/>
+  <outline type="outline" text="<?php echo $outline[0]['title']; ?>" />
+  <outline type="outline" text="<?php echo strip_tags($outline[0]['body']); ?>" />
   <?php
   endforeach;
   ?>
