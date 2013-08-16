@@ -20,6 +20,8 @@ while (have_posts()) {
   $outline[$c]['title']     = get_the_title();
   $outline[$c]['body']      = get_the_content();
   //need to split body up by tags
+
+  //------------------------------
   $outline[$c]['author']    = get_the_author();
   $outline[$c]['authormail']= get_the_author_email();
   $outline[$c]['author_id'] = get_the_author_ID();
