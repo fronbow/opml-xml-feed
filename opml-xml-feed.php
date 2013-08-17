@@ -23,6 +23,8 @@ function getUrls($string) {
   return ($matches);
 }
 
+
+
 function ret_urls($string) {
   $dom = new DOMDocument;
   $dom->loadHTML($string);

@@ -55,21 +55,23 @@ while (have_posts()) {
   <ownerName><?php echo $outline[0]['author']; ?></ownerName>
   <ownerEmail><?php echo $outline[0]['authormail']; ?></ownerEmail>
   <dateCreated><?php echo date(DATE_RFC822); ?></dateCreated>
+  <dateModified><?php echo mysql2date('d M Y H:i', get_post_time('Y-m-d H:i', true), true); ?></dateModified>
   <expansionState><?php echo ''; ?></expansionState>
   <docs>http://dev.opml.org/spec2.html</docs>
 </head>
 <body>
   <?php
+  
   foreach ($outline as $content):
   ?>
-  <outline type="outline" text="<?php echo $outline[0]['title']; ?>" />
-  <outline type="outline" text="<?php echo strip_tags($outline[0]['body']); ?>" />
+  <outline type="outline" text="<?php echo $content['title']; ?>" />
+  <outline type="outline" text="<?php echo strip_tags($content['body']); ?>" />
   <?php
   foreach ($content['links'] as $link_out):
   ?><outline type="link" text="<?php echo $link_out['title']; ?>" url="<?php echo $link_out['href']; ?>" />
   <?php
   endforeach;
-
+  
   //print_r($outline);
   endforeach;
   ?>
